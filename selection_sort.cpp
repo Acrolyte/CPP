@@ -14,6 +14,7 @@ int main()
 
 	repr(i,k){
 		int l=0;
+		/*loop to find smallest element in the remaining array*/
 		rep(j,i){
 			if(A[j]>A[l])
 				l = j;
