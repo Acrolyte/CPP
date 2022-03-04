@@ -38,19 +38,17 @@ typedef vector<vl> vvl;
 #define TC(t) while (t--)
 
 
-void solve(vi &v){
-	int n = SIZE(v);
-	int a = 0;
-	while(a<n){
-		int x = 0;
-		FOR(i,a+1,n){
-			if(v[i]<0){ x = i; break;}
-		}
-		FORD(i,x,a+1){
-			swap(v[i],v[i-1]);
-		}
-		a += 2;
+void solve(){
+	int n,x;
+	cin>>n;
+	int mi = INT_MAX;
+	int ma = INT_MIN;
+	TC(n){
+		cin>>x;
+		mi = min(x,mi);
+		ma = max(x,ma);
 	}
+	cout<<ma-mi<<'\n';
 }
 
 
@@ -59,14 +57,8 @@ int main(){
     cin.tie(0);
     int t;
     cin>>t;
-    vi v;
-    TC(t){
-    	int x;
-    	cin>>x;
-        v.pb(x);}
-    // for(auto it : v) cout<<it;
-    solve(v);
-   	for(auto it: v) cout<<it<<' ';
+    TC(t)
+    solve();
 
 	return 0;
 }

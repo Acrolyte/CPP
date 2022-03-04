@@ -38,35 +38,30 @@ typedef vector<vl> vvl;
 #define TC(t) while (t--)
 
 
-void solve(vi &v){
-	int n = SIZE(v);
-	int a = 0;
-	while(a<n){
-		int x = 0;
-		FOR(i,a+1,n){
-			if(v[i]<0){ x = i; break;}
+void solve(){
+	string s;
+	cin>>s;
+	int n = s.length();
+	int k = 1<<n;
+	REP(i,k){
+		string sub = "";
+		REP(j,n){
+			if(i & (1<<j))
+				sub += s[j];
 		}
-		FORD(i,x,a+1){
-			swap(v[i],v[i-1]);
-		}
-		a += 2;
+		cout<<sub<<'\n';
 	}
+
 }
 
 
 int main(){
 	ios_base::sync_with_stdio(0);
     cin.tie(0);
-    int t;
-    cin>>t;
-    vi v;
-    TC(t){
-    	int x;
-    	cin>>x;
-        v.pb(x);}
-    // for(auto it : v) cout<<it;
-    solve(v);
-   	for(auto it: v) cout<<it<<' ';
+    //int t;
+    //cin>>t;
+    //TC(t)
+    solve();
 
 	return 0;
 }

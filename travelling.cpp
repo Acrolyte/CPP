@@ -38,19 +38,18 @@ typedef vector<vl> vvl;
 #define TC(t) while (t--)
 
 
-void solve(vi &v){
-	int n = SIZE(v);
-	int a = 0;
-	while(a<n){
-		int x = 0;
-		FOR(i,a+1,n){
-			if(v[i]<0){ x = i; break;}
-		}
-		FORD(i,x,a+1){
-			swap(v[i],v[i-1]);
-		}
-		a += 2;
+void solve(){
+	LL n,m,a,b;
+	cin>>n>>m;
+	vi g[n+1];
+
+	RESET(g,0);
+	TC(m){
+		cin>>a>>b;
+		g[a][b]=1;
+		g[b][a]=1;
 	}
+
 }
 
 
@@ -59,14 +58,8 @@ int main(){
     cin.tie(0);
     int t;
     cin>>t;
-    vi v;
-    TC(t){
-    	int x;
-    	cin>>x;
-        v.pb(x);}
-    // for(auto it : v) cout<<it;
-    solve(v);
-   	for(auto it: v) cout<<it<<' ';
+    TC(t)
+    solve();
 
 	return 0;
 }

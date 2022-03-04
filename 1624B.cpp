@@ -38,19 +38,14 @@ typedef vector<vl> vvl;
 #define TC(t) while (t--)
 
 
-void solve(vi &v){
-	int n = SIZE(v);
-	int a = 0;
-	while(a<n){
-		int x = 0;
-		FOR(i,a+1,n){
-			if(v[i]<0){ x = i; break;}
-		}
-		FORD(i,x,a+1){
-			swap(v[i],v[i-1]);
-		}
-		a += 2;
-	}
+void solve(){
+	LL a,b,c;
+	cin>>a>>b>>c;
+	bool t = false;
+	if((a+c)%(2*b)==0) t = true;
+	if((((2*b)-a)%c==0 && ((2*b)-a)>=c) || (((2*b)-c)%a==0 && ((2*b)-a)>=c )) t = true;
+	if(t) cout<<"YES\n";
+	else cout<<"NO\n";
 }
 
 
@@ -59,14 +54,8 @@ int main(){
     cin.tie(0);
     int t;
     cin>>t;
-    vi v;
-    TC(t){
-    	int x;
-    	cin>>x;
-        v.pb(x);}
-    // for(auto it : v) cout<<it;
-    solve(v);
-   	for(auto it: v) cout<<it<<' ';
+    TC(t)
+    solve();
 
 	return 0;
 }
