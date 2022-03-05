@@ -6,14 +6,13 @@ int main(){
 	ll t;
 	cin>>t;
 	while(t--){
-		ll n;
-		cin>>n;
-		ll c=5,z=0;
-		while((n/c)>0){
-			z += (n/c);
-			c *= 5;
-		}		
-		cout<<z<<'\n';
+		ll k,d0,d1;
+		cin>>k>>d0>>d1;
+		
+		for(ll i=1;i<=k;i++){
+
+		}
+
 	}
 	return 0;
 }

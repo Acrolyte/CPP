@@ -3,17 +3,12 @@ using namespace std;
 #define ll long long
 
 int main(){
-	ll t;
+	int t;
 	cin>>t;
 	while(t--){
-		ll n;
-		cin>>n;
-		ll c=5,z=0;
-		while((n/c)>0){
-			z += (n/c);
-			c *= 5;
-		}		
-		cout<<z<<'\n';
+		int a,b,c;
+		cin>>a>>b>>c;
+		cout<<max(b,(a+c))<<'\n';
 	}
 	return 0;
 }
