@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
 
-int main(){
+int main()
+{
 	int t;
 	cin>>t;
 	while(t--){
-		int a,b,c;
-		cin>>a>>b>>c;
-		cout<<max(b,(a+c))<<'\n';
+		int n;
+		cin>>n;
+		if(n%4==0) cout<<"Good\n";
+		else cout<<"Not Good\n";
 	}
 	return 0;
 }
